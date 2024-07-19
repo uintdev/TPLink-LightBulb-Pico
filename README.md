@@ -45,7 +45,7 @@ This allows for basic controls over:
 
 The controls can be operated either by pressing or press and holding the BOOTSEL button, or through the HTTP server.
 
-Refer to the (block) comments under the main script. This will go into detail when it comes to the different LEDs, different button actions based on button hold durations. This will also show the different endpoints available.
+Refer to the (block) comments under the main script. This will go into detail when it comes to the different LED patterns and different button actions based on button hold durations. This will also show the different endpoints available.
 
 # Expanding on functionality
 
