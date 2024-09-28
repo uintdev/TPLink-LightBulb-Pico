@@ -222,20 +222,20 @@ def button_actions(time, button_released = True):
     Action list
 
     0 - 500 ms (release) = toggle power
-    550 - 1000 ms (release) = power state
-    1050 - 3000 ms (release) = toggle between brightness 50% and 100%
-    3050 - 5000 ms (release) = reconnect to network
-    5050+ ms (hold) = hard reset -- release button while LED flashes to reset, or it will go into UF2 bootloader
+    501 - 1000 ms (release) = power state
+    1001 - 3000 ms (release) = toggle between brightness 50% and 100%
+    3001 - 5000 ms (release) = reconnect to network
+    5001+ ms (hold) = hard reset -- release button while LED flashes to reset, or it will go into UF2 bootloader
     '''
     
-    if time >= 5050 and button_released == False:
+    if time > 5000 and button_released == False:
         led_flash(7)
         machine.reset()
-    elif time >= 3050 and time <= 5000 and button_released:
+    elif time > 3000 and time <= 5000 and button_released:
         network_connect()
-    elif time >= 1050 and time <= 3000 and button_released:
+    elif time > 1000 and time <= 3000 and button_released:
         light_brightness_toggle()
-    elif time >= 550 and time <= 1000 and button_released:
+    elif time > 500 and time <= 1000 and button_released:
         light_state()
     elif time >= 0 and time <= 500 and button_released:
         light_switch()
